@@ -1,0 +1,13 @@
+ZOLTAN_AR = ar
+ZOLTAN_ALTERNATE_AR = 
+ZOLTAN_CC = /usr/local/bin/mpicc
+ZOLTAN_CFLAGS = -fPIC -g -O2
+ZOLTAN_CPPFLAGS = -DAUTOTOOLS_BUILD  
+ZOLTAN_CXX = /usr/local/bin/mpicxx
+ZOLTAN_CXXFLAGS = -DMPICH_IGNORE_CXX_SEEK  -g -O2
+ZOLTAN_DEFS = -DHAVE_CONFIG_H
+ZOLTAN_FC = 
+ZOLTAN_FCFLAGS = 
+ZOLTAN_LDFLAGS = 
+ZOLTAN_RANLIB = ranlib
+ZOLTAN_prefix = /Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install

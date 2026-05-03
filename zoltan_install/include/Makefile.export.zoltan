@@ -1,0 +1,80 @@
+#SIMPI_INCDIR = -I/tmp/Zoltan/build/../siMPI/pyMPI/siMPI
+#SIMPI_LIBS = -L/tmp/Zoltan/build/siMPI/pyMPI/siMPI -lsimpi
+
+ZOLTAN_INCLUDES = -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/include -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/include $(SIMPI_INCDIR)
+
+#@BUILD_FORTRAN90DRIVER_TRUE@ZFORLIBS = 
+@USE_FORTRAN_TRUE@ZFLIBS = @FLIBS@
+#The following line can be edited in the case that -lm is not available
+@USE_FORTRAN_FALSE@ZFLIBS = -lm
+#@BUILD_FORTRAN90DRIVER_FALSE@ZFORLIBS = $(ZFLIBS)
+ZFORLIBS = $(ZFLIBS)
+
+ZOLTAN_LIBS =  -L/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/lib -lzoltan  -lm $(ZFORLIBS) $(SIMPI_LIBS) 
+
+ZOLTAN_LIBRARY_INCLUDES = -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/include -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/include -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/all -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/coloring -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/ha -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/hier -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/hsfc -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/lb -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/oct -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/order -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/par -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/params -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/tpls -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/ccolamd -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/phg -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/rcb -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/reftree -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/timer -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/Utilities/Communication -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/Utilities/Timer -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/Utilities/DDirectory -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/Utilities/Memory -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/Utilities/shared -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/zz -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/graph -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/matrix -I/Users/mariagragera/Desktop/Circuit-benchmarking-suite/zoltan_install/include/simple $(SIMPI_INCDIR)
+
+ZOLTAN_DEPS = /tmp/Zoltan/build/src/libzoltan.a
+
+############################################################################
+#
+# Export MPI settings
+#
+############################################################################
+
+# MPI libraries
+ZOLTAN_MPI_LIBS = @MPI_LIBS@
+
+# MPI include path
+ZOLTAN_MPI_INC = @MPI_INC@
+
+# Path to MPI libraries
+ZOLTAN_MPI_LIBDIR = @MPI_LIBDIR@
+
+# Path to MPI root
+ZOLTAN_MPI_DIR = @MPI_DIR@
+
+############################################################################
+#
+# Export Fortran libraries
+#
+############################################################################
+
+# Fortran & standard math libs
+#ZOLTAN_FCLIBS = 
+ZOLTAN_FLIBS = $(ZFLIBS)
+
+# Extra libraries
+ZOLTAN_EXTRA_LIBS =  -lm
+
+############################################################################
+#
+# Export compiler settings
+#
+############################################################################
+
+# Extra definitions
+ZOLTAN_DEFS = -DHAVE_CONFIG_H
+
+# Fortran compilation flags
+@BUILD_FORTRAN90DRIVER_TRUE@ZOLTAN_FCFLAGS = 
+@USE_FORTRAN_TRUE@ZOLTAN_FFLAGS = @FFLAGS@
+ 
+# C compilation flags
+ZOLTAN_CFLAGS = -fPIC -g -O2
+
+# C++ compilation flags
+ZOLTAN_CXXFLAGS = -DMPICH_IGNORE_CXX_SEEK  -g -O2
+
+# linker flags
+ZOLTAN_LDFLAGS = 
+
+
+############################################################################
+#
+# Export the ranlib and archiver to be used
+#
+############################################################################
+
+ZOLTAN_RANLIB = ranlib
+
