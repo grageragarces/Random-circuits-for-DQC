@@ -1,6 +1,6 @@
 # Random Circuits for Distributed Quantum Computing
 
-Code accompanying the paper **"Do Random Circuits Make Good Benchmarks for Distributed Quantum Computing?"**
+Code accompanying the paper **"On the Distortion of Partitioning Performance by Random Quantum Circuits"**
 
 This repository contains the partitioning pipeline, analysis scripts, and statistical tests used to evaluate how well different hypergraph partitioning strategies distribute quantum circuits across multi-QPU networks — and whether the choice of strategy matters more for *real* circuits than for *random* or *procedurally generated* ones.
 
