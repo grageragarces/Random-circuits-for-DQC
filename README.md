@@ -2,6 +2,8 @@
 
 Code accompanying the paper [**"On the Distortion of Partitioning Performance by Random Quantum Circuits"**](https://arxiv.org/pdf/2605.01974)
 
+<a href="https://doi.org/10.5281/zenodo.24084091"><img src="https://zenodo.org/badge/1228011807.svg" alt="DOI"></a>
+
 This repository contains the partitioning pipeline, analysis scripts, and statistical tests used to evaluate how well different hypergraph partitioning strategies distribute quantum circuits across multi-QPU networks — and whether the choice of strategy matters more for *real* circuits than for *random* or *procedurally generated* ones.
 
 ---
